@@ -3,7 +3,8 @@ db:
 
 web:
   build: web/
-  ports: 3000
+  ports:
+    - 3000
   volumes:
     - .:/app
   links:
