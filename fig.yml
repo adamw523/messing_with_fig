@@ -1,12 +1,14 @@
-db:
-  build: db/
+#db:
+#  build: db/
+#  ports:
+#    - "8432:5432"
 
 web:
   build: web/
   ports:
-    - 3000
+    - 8500:5000
   volumes:
-    - .:/app
-  links:
-    - db
+    - ./web:/app
+#  links:
+    #    - db
 
