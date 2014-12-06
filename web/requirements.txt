@@ -1,1 +1,4 @@
+coaster
 Flask
+Flask-SQLAlchemy
+psycopg2
