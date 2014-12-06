@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block body %}
+  <h2>New Tick</h2>
+  <form action="/ticks" method="post">
+    message: <input type="text" name="message" value="{{ request.form['message'] }}"/>
+    <button type="submit">Create</button>
+  </form>
+
+  <h2>All Ticks</h2>
+  <ul>
+    {% for tick in ticks %}
+    <li>
+      <a href="/ticks/{{ tick.id }}/delete">[delete]</a>
+      {{ tick.id }} -
+      {{ tick.message }}
+    </li>
+    {% else %}
+      <li>No Ticks yet.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
